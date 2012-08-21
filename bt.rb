@@ -6,7 +6,10 @@ require_relative 'table_name'
 require_relative 'column_name'
 require_relative 'column_type'
 require_relative 'column_constraints'
-require_relative 'table_constrain'
+require_relative 'index_type'
+require_relative 'key'
+require_relative 'index_name_or_index_column_name'
+require_relative 'constraint'
 
 require_relative 'database'
 require_relative 'if'
@@ -18,7 +21,7 @@ require_relative 'drop'
 require_relative 'not'
 
 require_relative 'column_stack'
-require_relative 'table_constrain_stack'
+require_relative 'table_indexes_stack'
 
 require_relative 'write_migration'
 require_relative 'write_activerecord'
@@ -35,8 +38,9 @@ class Node
 end
 
 class BinaryTree
-	attr_reader :root_node, :current_node, :column_definition, :temp_column_name, :temp_column_type, :temp_column_constrain,
-              :temp_table_constrain, :temp_table_constrain_name, :table_constrains, :table_name
+	attr_reader :root_node, :current_node, :column_definition, :temp_column_name, :temp_column_type,
+              :temp_column_constrain, :temp_index_type, :temp_index_column_name, :temp_index_name,
+              :table_indexes, :table_name
 
 	def initialize()#data = nil, value = nil)
 		#@root_node = Node.new(data,value)
@@ -48,9 +52,10 @@ class BinaryTree
     @temp_column_type = nil
     @temp_column_constrain = Array.new
 
-    @table_constrains = TableConstrainStack.new()
-    @temp_table_constrain = nil
-    @temp_table_constrain_name = nil
+    @table_indexes = TableIndexesStack.new()
+    @temp_index_type = nil
+    @temp_index_column_name = nil
+    @temp_index_name = nil
 
 	end
 
@@ -135,7 +140,9 @@ class BinaryTree
     #  puts "another Idea is to write at end of initiate_class, I need to modify case statement and make return at end for all "
     #end
 
-    right_variables = Hash["TableName" => "82", "COLUMN_NAME" => "84", "COLUMN_TYPE" => "85", "COLUMN_CONSTRAINTS" => "88", "TABLE_CONSTRAINTS" => "89"]
+    right_variables = Hash["TableName" => "82", "COLUMN_NAME" => "84", "COLUMN_TYPE" => "85",
+                           "COLUMN_CONSTRAINTS" => "88", "INDEX_TYPE" => "90", "INDEX_NAME_OR_INDEX_COLUMN_NAME" => "93",
+                           "CONSTRAINT" => "94", "KEY" => "91" ]
     if @current_node.data == token or right_variables.has_key?(@current_node.data)
       success = initiate_class(@current_node.data, token)
       case success
@@ -147,7 +154,7 @@ class BinaryTree
         when "Go_To_Col_type_Transition"
           @current_node = find_data("COLUMN_TYPE")
           return_value = true
-        when "Go_to_Table_Constraints"
+        when "Go_to_Table_Constraints" #I think this has been removed
           return_value = token
         when "Go_TO_END" #check this where it is ?
           return_value = token
@@ -155,34 +162,24 @@ class BinaryTree
           @current_node = find_data("(")
           return_value = token
 
-        when "Go_To_Column_Constrain_Transition"
+        when "Go_To_KEY_Transition"
+          @current_node = find_data("KEY") #may I need to change the search method to find_value in case there is
+          return_value = true              #another transition has same data will be there  later.
+        when "Go_To_COLUMN_CONSTRAINT"
           @current_node = find_data("COLUMN_CONSTRAINTS")
-          return_value = true
-
-        #when "PRIMARY"
+          return_value = token
       end
-      #if success == true
-      #  return_value = true
-      #elsif success == token
-      #  @current_node = @root_node
-      #  return_value = token
-      #end
     else
         @current_node = @root_node
         return_value = token
     end
-    #puts @column_definition.count
-    #mystack = @column_definition.get()
-    #mystack.each_index do |i|
-    #  puts mystack[i].columnName
-    #  puts mystack[i].columnType
-    #end
 
     return return_value
   end
 
   def next_node(token,current)
-    right_variables = Hash["TableName" => "82", "COLUMN_NAME" => "84", "COLUMN_TYPE" => "85", "COLUMN_CONSTRAINTS" => "88", "TABLE_CONSTRAINTS" => "89"]
+    right_variables = Hash["TableName" => "82", "COLUMN_NAME" => "84", "COLUMN_TYPE" => "85",
+                           "COLUMN_CONSTRAINTS" => "88", "INDEX_TYPE" => "90", "CONSTRAINT" => "94"]
     #left_variables = Hash[]
 
     if current.right_node != nil and current.left_node == nil
@@ -275,18 +272,36 @@ class BinaryTree
 
         return result
 
-      when "TABLE_CONSTRAINTS"
-        #push_to_column_definition_stack()
-        valid_CONSTRAINTS = TableConstrain.new()
-        result = valid_CONSTRAINTS.table_constrains_check(token)
-        if result == "Go_To_Column_Constrain_Transition"
-          if token == "PRIMARY" #hash with all known words (for later for unique key)
-            @temp_table_constrain = token
-          end
-        elsif result == true
-          @temp_table_constrain_name = token
-          push_to_table_constrain_stack()
+      when "INDEX_TYPE"
+        valid_Type = IndexType.new()
+        result = valid_Type.index_type_check(token)
+        if result == true
+          @temp_index_type = token
         end
+        return result
+
+      when "KEY"
+        validate_token = Key.new()
+        result = validate_token.validate(token)
+        if result == true and token != "KEY"
+          @temp_index_name = token
+        end
+        return result
+
+      when "INDEX_NAME_OR_INDEX_COLUMN_NAME"
+        valid_transition = IndexNameOrIndexColumnName.new()
+        result = valid_transition.validate(token)
+        if result == "Go_To_KEY_Transition"
+          @temp_index_name = token
+        elsif result == true
+          @temp_index_column_name = token
+          push_to_table_indexes_stack()
+        end
+        return result
+
+      when "CONSTRAINT"
+        valid_transition = Constraint.new()
+        result = valid_transition.validate(token)
         return result
 
       when ");"
@@ -306,14 +321,15 @@ class BinaryTree
           end
         end
 
-        puts "============Write Table Constrain================="
+        puts "============Write Table Indexes================="
 
-        if @table_constrains != nil
-          my_info = @table_constrains.get()
+        if @table_indexes != nil  #it should be empty maybe
+          my_info = @table_indexes.get()
           my_info.each_index do |i|
-            puts "---- constrain # :#{i}"
-            puts my_info[i].constrain
-            puts my_info[i].constrainName
+            puts "---- index # :#{i}"
+            puts my_info[i].index_type
+            puts my_info[i].index_column_name
+            puts my_info[i].index_name
           end
         end
 
@@ -329,7 +345,7 @@ class BinaryTree
 
         @table_name = nil
         @column_definition = Column_Stack.new()
-        @table_constrains = TableConstrainStack.new()
+        @table_indexes = TableIndexesStack.new()
         return true
 
 			when "DROP"
@@ -367,10 +383,11 @@ class BinaryTree
     $times_in = 0
   end
 
-  def push_to_table_constrain_stack()
-    @table_constrains.push(@temp_table_constrain, @temp_table_constrain_name)
-    @temp_table_constrain = nil
-    @temp_table_constrain_name = nil
+  def push_to_table_indexes_stack()
+    @table_indexes.push(@temp_index_type, @temp_index_column_name, @temp_index_name )
+    @temp_index_type = nil
+    @temp_index_column_name = nil
+    @temp_index_name = nil
   end
 
 end

@@ -80,7 +80,7 @@ class Column
 	end
 	
 	def tableConstrain(tokens)
-		tcons = TableConstrain.new(tokens, @@theindex)
+		tcons = IndexType.new(tokens, @@theindex)
 	end
 	
 	def columnName()

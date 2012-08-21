@@ -6,8 +6,10 @@ class Write_ActiveRecord
       f2.puts "require 'rubygems'"
       f2.puts "require 'active_record'"
       f2.puts "\n"
-      first_letter = tableName[0].capitalize!
-      tableName[0] = first_letter
+      if tableName[0] != tableName[0].capitalize
+        first_letter = tableName[0].capitalize!
+        tableName[0] = first_letter
+      end
       f2.puts "class #{tableName} < ActiveRecord::Base"
       f2.puts "\n"
       f2.puts "end"

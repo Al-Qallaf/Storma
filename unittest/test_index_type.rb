@@ -1,24 +1,28 @@
 require "test/unit"
+require_relative "../index_type"
 
-class test_index_transition < Test::Unit::TestCase
+class Test_index_transition < Test::Unit::TestCase
+  def test_transition_flow()
+    flow = IndexType.new()
 
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
-  end
+    result = flow.index_type_check("PRIMARY")
+    assert_equal result, true
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
+    result = flow.index_type_check("KEY")
+    assert_equal result, true
 
-  def teardown
-    # Do nothing
-  end
+    result = flow.index_type_check("UNIQUE")
+    assert_equal result, true
 
-  # Fake test
-  def test_fail
+    result = flow.index_type_check("id")
+    assert_equal result, "Go_To_bracket_Transition"
 
-    # To change this template use File | Settings | File Templates.
-    fail("Not implemented")
+    result = flow.index_type_check("`id`")
+    assert_equal result, "Go_To_bracket_Transition"
+
+    result = flow.index_type_check("23dsd")
+    assert_equal result, "23dsd"
+
+
   end
 end

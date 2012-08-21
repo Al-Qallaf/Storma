@@ -26,7 +26,7 @@ class Column_Constraints
           end
 
       when /^'[a-zA-Z]*|\d*',$/ #handel ex. "'1',"  or "'new',"
-          puts "column Constraint with '',"
+          puts "column Constraint with '', "
           puts 'Make split here then seek the key in The Constraint_Variables'
           puts "The Constraint is : #{token}"
           return true
