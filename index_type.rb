@@ -1,9 +1,9 @@
-class TableConstrain
+class IndexType
 
   @@constrains_Table = Hash["PRIMARY" => 1, "KEY" => 2]
 
   def initialize()
-		puts 'In TableConstrain class'
+		puts 'In IndexType class'
   end
 
   def table_constrains_check(token)
