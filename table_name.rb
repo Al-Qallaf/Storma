@@ -31,16 +31,4 @@ class TableName
       return @token
     end
   end
-	
-	# def table(tokens)
-		# @@theindex = @@theindex + 1
-		# transition = $transitions.find(2)						
-		# if /[a-zA-Z]/.match(tokens[@@theindex])
-			# transition.data = tokens[@@theindex]
-			# puts "Table name is variable of letters only" 
-			# puts tokens[@@theindex]
-		# else
-			# puts 'Error 2, table name error'
-		# end
-	# end
 end

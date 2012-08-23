@@ -1,24 +1,28 @@
 require "test/unit"
+require_relative "../constraint_name"
 
 class Test_transition_flow < Test::Unit::TestCase
+  def test_flow()
+    name_flow = ConstraintName.new()
 
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
+    expected = name_flow.validate("`name`")
+    assert_equal expected, true, "should be true"
+    #assert_match expected, true, "good"
+
+
+    expected = name_flow.validate("theName")
+    assert_equal(expected, "theName" , " return same token to reset")
+
+
   end
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
+  def test_wrong_flow()
+    name_flow = ConstraintName.new()
 
-  def teardown
-    # Do nothing
+    expected = name_flow.validate(nil)
+    assert_equal(expected, nil , " return should be true")
+
   end
 
-  # Fake test
-  def test_fail
 
-    # To change this template use File | Settings | File Templates.
-    fail("Not implemented")
-  end
 end

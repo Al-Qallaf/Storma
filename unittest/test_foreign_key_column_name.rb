@@ -1,24 +1,19 @@
 require "test/unit"
+require_relative "../foreign_key_column_name"
 
-class test_valid_name < Test::Unit::TestCase
+class Test_foreign_column_name < Test::Unit::TestCase
+  def test_valid_name
+    name = ForeignKeyColumnName.new()
 
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
+    result = name.foreignKeyColumnNameCheck("(`theName`)")
+    assert_equal(result, true, "Return value should be comply with regx ")
+
   end
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
+  def test_wrong_name
+    name = ForeignKeyColumnName.new()
 
-  def teardown
-    # Do nothing
-  end
-
-  # Fake test
-  def test_fail
-
-    # To change this template use File | Settings | File Templates.
-    fail("Not implemented")
+    result = name.foreignKeyColumnNameCheck("theName")
+    assert_equal(result, "theName", "Return value should be same token")
   end
 end

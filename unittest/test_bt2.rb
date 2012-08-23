@@ -139,6 +139,82 @@ class TestCreate < Test::Unit::TestCase
       end
     end
   end
+
+  def test10_check_method_with_full_table_constraint()
+    puts '--------------------------Test 10------------------------'
+    all_transitions_added()
+    tokens = ["CREATE", "TABLE", "Salary", "(",
+              "id", "varchar(50)", "NOT", "NULL", "DEFAULT", "'1',",
+              "`date`", "date", "DEFAULT", "NULL,",
+              "PRIMARY", "KEY", "(`id`),",
+              "UNIQUE", "KEY", "`i_name`", "(`address`),",
+              "KEY", "`f_k_name`", "(`role`),",
+              "KEY", "`index4`", "(`name`),",
+              "CONSTRAINT", "`f_k_name`", "FOREIGN", "KEY", "(`role`)",
+              "REFERENCES", "`roles`", "(`idroles`)",
+              #"ON", "DELETE", "NO", "ACTION", "ON", "UPDATE", "NO", "ACTION",
+              #"ON", "DELETE", "CASCADE", "ON", "UPDATE", "CASCADE",
+              #"ON", "DELETE", "NO", "ACTION", "ON", "UPDATE", "CASCADE",
+              "ON", "DELETE", "CASCADE", "ON", "UPDATE", "NO", "ACTION",
+              ");"]
+
+    tokens.each_index do |i|
+      returnToken = $transitions.check(tokens[i])
+      if (returnToken != true)
+        puts 'To handel last token (start from last invalid token)'
+        $transitions.check(returnToken)
+      end
+    end
+  end
+
+  def all_transitions_added()
+    $transitions = BinaryTree.new()
+    $transitions.add("start",50)
+    $transitions.add("CREATE",80)
+    $transitions.add("TABLE",81)
+    $transitions.add("TableName",82)
+    $transitions.add("(",83)
+    $transitions.add("COLUMN_NAME",84)
+    $transitions.add("COLUMN_TYPE",85)
+    $transitions.add("COLUMN_CONSTRAINTS",88)
+    $transitions.add(");",86)
+
+    $transitions.add("INDEX_TYPE",90)
+    $transitions.add("KEY",91)
+    $transitions.add("INDEX_NAME_OR_INDEX_COLUMN_NAME",93)
+    $transitions.add(");",92)
+
+    $transitions.add("CONSTRAINT",94)
+    $transitions.add("CONSTRAINT_NAME",95)
+    $transitions.add("FOREIGN",96)
+    $transitions.add("KEY",97)
+    $transitions.add("FOREIGN_KEY_COLUMN_NAME",98)
+    $transitions.add("REFERENCES",99)
+    $transitions.add("FOREIGN_TABLE",100)
+    $transitions.add("FOREIGN_COLUMN",101)
+    $transitions.add("ON",102)
+    $transitions.add("DELETE_UPDATE",103)
+    $transitions.add("FOREIGN_KEY_OPTION1",105)
+    $transitions.add(");",104)
+    $transitions.add("FOREIGN_KEY_OPTION2",106)
+    $transitions.add(");",107)
+
+
+
+    $transitions.add("DATABASE",70)
+    $transitions.add("IF",71)
+    $transitions.add("NOT",72)
+    $transitions.add("EXISTS",73)
+    $transitions.add("DataBaseName",74)
+
+    $transitions.add("DROP",20)
+    $transitions.add("TABLE",19)
+    $transitions.add("IF",18)
+    $transitions.add("EXISTS",17)
+    $transitions.add("TableName",16)
+
+  end
+
   def transitions_added()
     $transitions = BinaryTree.new()
     $transitions.add("start",50)
@@ -171,7 +247,6 @@ class TestCreate < Test::Unit::TestCase
     $transitions.add("TableName",16)
 
   end
-
 
   def transitions
 		$transitions = BinaryTree.new()

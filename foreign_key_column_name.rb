@@ -3,7 +3,7 @@ class ForeignKeyColumnName
     puts 'In ForeignKeyColumnName class'
   end
 
-  def foreignColumnNameCheck(token)
+  def foreignKeyColumnNameCheck(token)
     case token
       when /^\(`[a-zA-Z]\w*`\)$/
         return_value = true

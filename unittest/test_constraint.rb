@@ -1,24 +1,26 @@
 require "test/unit"
+require_relative "../constraint"
 
-class test_transition_flow < Test::Unit::TestCase
+class Test_transition_flow < Test::Unit::TestCase
+  def test_flow()
+    name_flow = Constraint.new()
 
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
+    expected = name_flow.validate("`name`")
+    assert_equal expected, "`name`"
+
+    expected = name_flow.validate("CONSTRAINT")
+    assert_equal(expected, true, "Return value should be true")
+
+    expected = name_flow.validate("KEY")
+    assert_equal expected, "Go_To_COLUMN_CONSTRAINT", "Check if this var. in hash"
+
   end
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
+  def test_wrong_flow()
+    name_flow = Constraint.new()
 
-  def teardown
-    # Do nothing
-  end
+    expected = name_flow.validate("CONSTRAINT")
+    assert_equal(expected, nil, "Return value should be true, here test nil")
 
-  # Fake test
-  def test_fail
-
-    # To change this template use File | Settings | File Templates.
-    fail("Not implemented")
   end
 end

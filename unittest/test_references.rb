@@ -5,7 +5,7 @@ class TestReferences < Test::Unit::TestCase
     def test_Reference_transition()
       name = References.new()
 
-      expected = name.validate("REFERENCE")
+      expected = name.validate("REFERENCES")
       assert_equal expected, true
     end
 

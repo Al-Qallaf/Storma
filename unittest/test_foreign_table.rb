@@ -1,24 +1,26 @@
 require "test/unit"
+require_relative "../foreign_table"
 
 class Test_Foreign_Table < Test::Unit::TestCase
+  def test_foreign_table_name()
+    name_validation = ForeignTable.new()
 
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
+    expected = name_validation.table_name("`customer`")
+    assert_equal expected, true
   end
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
+  def test_foreign_table_name_nil()
+    name_validation = ForeignTable.new()
 
-  def teardown
-    # Do nothing
+    expected = name_validation.table_name(nil)
+    assert_equal expected, nil
   end
 
-  # Fake test
-  def test_fail
 
-    # To change this template use File | Settings | File Templates.
-    fail("Not implemented")
+  def test_foreign_table_wrong_name()
+    name_validation = ForeignTable.new()
+
+    expected = name_validation.table_name("name")
+    assert_equal expected, "name"
   end
 end

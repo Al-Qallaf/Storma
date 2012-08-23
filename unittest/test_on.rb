@@ -1,24 +1,25 @@
 require "test/unit"
+require "../on"
 
 class Test_On < Test::Unit::TestCase
+  def test_on_transition()
+    name = On.new()
 
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
+    expected = name.validate("ON")
+    assert_equal expected, true, "Return value  should be true"
   end
 
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
+  def test_nil()
+    name = On.new()
 
-  def teardown
-    # Do nothing
+    expected = name.validate(nil)
+    assert_equal(expected, nil, "Return value should be nil, here test nil")
   end
 
-  # Fake test
-  def test_fail
+  def test_wrong_token()
+    name = On.new()
 
-    # To change this template use File | Settings | File Templates.
-    fail("Not implemented")
+    expected = name.validate("word")
+    assert_equal(expected, "word", "Return value should be same token")
   end
 end

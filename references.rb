@@ -5,7 +5,7 @@ class References
 
   def validate(token)
     case token
-      when "REFERENCE"
+      when "REFERENCES"
         return_value = true
 
       else

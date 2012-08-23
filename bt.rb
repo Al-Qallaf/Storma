@@ -10,6 +10,16 @@ require_relative 'index_type'
 require_relative 'key'
 require_relative 'index_name_or_index_column_name'
 require_relative 'constraint'
+require_relative 'constraint_name'
+require_relative 'foreign'
+require_relative 'foreign_key_column_name'
+require_relative 'references'
+require_relative 'foreign_table'
+require_relative 'foreign_column'
+require_relative 'on'
+require_relative 'delete_update'
+require_relative 'foreign_key_option1'
+require_relative 'foreign_key_option2'
 
 require_relative 'database'
 require_relative 'if'
@@ -142,7 +152,10 @@ class BinaryTree
 
     right_variables = Hash["TableName" => "82", "COLUMN_NAME" => "84", "COLUMN_TYPE" => "85",
                            "COLUMN_CONSTRAINTS" => "88", "INDEX_TYPE" => "90", "INDEX_NAME_OR_INDEX_COLUMN_NAME" => "93",
-                           "CONSTRAINT" => "94", "KEY" => "91" ]
+                           "CONSTRAINT" => "94","KEY" => "91",
+                           "CONSTRAINT_NAME" => "95", "FOREIGN_KEY_COLUMN_NAME" => "98", "FOREIGN_TABLE" => "100",
+                           "FOREIGN_COLUMN" => "101", "DELETE_UPDATE" => "103", "FOREIGN_KEY_OPTION1" => "105",
+                           "FOREIGN_KEY_OPTION2" => "106"]
     if @current_node.data == token or right_variables.has_key?(@current_node.data)
       success = initiate_class(@current_node.data, token)
       case success
@@ -168,6 +181,10 @@ class BinaryTree
         when "Go_To_COLUMN_CONSTRAINT"
           @current_node = find_data("COLUMN_CONSTRAINTS")
           return_value = token
+
+        when "Go_To_FOREIGN_COLUMN_Transition"
+          @current_node = find_data("FOREIGN_COLUMN")
+          return_value = true
       end
     else
         @current_node = @root_node
@@ -179,7 +196,8 @@ class BinaryTree
 
   def next_node(token,current)
     right_variables = Hash["TableName" => "82", "COLUMN_NAME" => "84", "COLUMN_TYPE" => "85",
-                           "COLUMN_CONSTRAINTS" => "88", "INDEX_TYPE" => "90", "CONSTRAINT" => "94"]
+                           "COLUMN_CONSTRAINTS" => "88", "INDEX_TYPE" => "90", "CONSTRAINT" => "94",
+                           "FOREIGN_KEY_OPTION2" => "106"]
     #left_variables = Hash[]
 
     if current.right_node != nil and current.left_node == nil
@@ -302,6 +320,60 @@ class BinaryTree
       when "CONSTRAINT"
         valid_transition = Constraint.new()
         result = valid_transition.validate(token)
+        return result
+
+      when "CONSTRAINT_NAME"
+        valid_transition = ConstraintName.new()
+        result = valid_transition.validate(token)
+        return result
+
+      when "FOREIGN"
+        valid_transition = Foreign.new()
+        result = valid_transition.validate(token)
+        return result
+
+      when "FOREIGN_KEY_COLUMN_NAME"
+        valid_transition = ForeignKeyColumnName.new()
+        result = valid_transition.foreignKeyColumnNameCheck(token)
+        return result
+
+      when "REFERENCES"
+        valid_transition = References.new()
+        result = valid_transition.validate(token)
+        return result
+
+      when "FOREIGN_TABLE"
+        valid_transition = ForeignTable.new()
+        result = valid_transition.table_name(token)
+        return result
+
+      when "FOREIGN_COLUMN"
+        valid_transition = ForeignColumn.new()
+        result = valid_transition.column_name(token)
+        return result
+
+      when "ON"
+        valid_transition = On.new()
+        result = valid_transition.validate(token)
+        return result
+
+      when "DELETE_UPDATE"
+        valid_transition = Delete_Update.new()
+        result = valid_transition.validate(token)
+        if result == true
+          valid_transition.pass_times_increase()
+        end
+        return result
+
+      when "FOREIGN_KEY_OPTION1"
+        valid_transition = ForeignKeyOption1.new()
+        result = valid_transition.validate_option(token,$number_of_passes)
+        return result
+
+      when "FOREIGN_KEY_OPTION2"
+        puts $number_of_passes
+        valid_transition = ForeignKeyOption2.new()
+        result = valid_transition.validate_option(token,$number_of_passes)
         return result
 
       when ");"

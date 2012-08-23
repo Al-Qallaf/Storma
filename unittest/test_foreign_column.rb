@@ -1,26 +1,26 @@
 require "test/unit"
-require_relative "../foreign_table"
+require_relative "../foreign_column"
 
-class Test_Foreign_Table < Test::Unit::TestCase
-  def test_foreign_table_name()
-    name_validation = ForeignTable.new()
+class Test_Foreign_column < Test::Unit::TestCase
+  def test_foreign_column_name()
+    name_validation = ForeignColumn.new()
 
-    expected = name_validation.table_name("`customer`")
+    expected = name_validation.column_name("(`customer`)")
     assert_equal expected, true
   end
 
-  def test_foreign_table_name_nil()
-    name_validation = ForeignTable.new()
+  def test_foreign_column_name_nil()
+    name_validation = ForeignColumn.new()
 
-    expected = name_validation.table_name(nil)
+    expected = name_validation.column_name(nil)
     assert_equal expected, nil
   end
 
 
-  def test_foreign_table_wrong_name()
-    name_validation = ForeignTable.new()
+  def test_foreign_column_wrong_name()
+    name_validation = ForeignColumn.new()
 
-    expected = name_validation.table_name("name")
+    expected = name_validation.column_name("name")
     assert_equal expected, "name"
   end
 end
