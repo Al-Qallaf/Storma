@@ -1,9 +1,10 @@
-class Createcustomers < ActiveRecord::Migration
+class CreateCustomers < ActiveRecord::Migration
 	def self.up
-		create_table :customers do |t|
-			t.column :id, :integer, :null => false
+		create_table :customers, { :primary_key => :idcustomers } do |t|
+			t.column :idcustomers, :integer, :null => false
 			t.column :name, :string, :default => nil
-			t.column :address, :string, :default => nil
+			t.column :email, :string, :default => nil
+			t.column :phone, :integer, :default => nil
 		end
 	end
 

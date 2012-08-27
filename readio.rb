@@ -1,7 +1,7 @@
 class Readio
 	def readthefile()	
 		lines = ""
-		File.open('../simpledb.sql', 'r') do |f1|
+		File.open('../default.sql', 'r') do |f1|
 			while line = f1.gets
 				lines = lines + line
 			end

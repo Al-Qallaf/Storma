@@ -3,6 +3,7 @@ require_relative "../index_type"
 
 class Test_index_transition < Test::Unit::TestCase
   def test_transition_flow()
+
     flow = IndexType.new()
 
     result = flow.index_type_check("PRIMARY")
@@ -20,9 +21,15 @@ class Test_index_transition < Test::Unit::TestCase
     result = flow.index_type_check("`id`")
     assert_equal result, "Go_To_bracket_Transition"
 
+    result = flow.index_type_check("`id_order`")
+    assert_equal result, "Go_To_bracket_Transition"
+
+  end
+
+  def test_fail()
+    flow = IndexType.new()
+
     result = flow.index_type_check("23dsd")
     assert_equal result, "23dsd"
-
-
   end
 end

@@ -1,3 +1,5 @@
+require_relative "only_characters"
+
 class Column_Name
   attr_reader :token
 
@@ -23,11 +25,14 @@ class Column_Name
   end
 
   def column_name_needed()
-    if @token.count('`') == 2
-      the_name =  @token.split("`")
-      return the_name[1]
-    else
-      return @token
-    end
+    name_only =  OnlyCharacters.new()
+    return name_only.to_characters_only(@token)
+  #  if @token.count('`') == 2
+  #    the_name =  @token.split("`")
+  #    return the_name[1]
+  #  else
+  #    return @token
+  #  end
   end
+
 end

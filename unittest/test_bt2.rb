@@ -1,6 +1,8 @@
 require 'test/unit'
 require_relative '../bt'
 require_relative '../readio'
+require_relative "../activerecord_relations_files"
+require_relative "../close_activerecord_file"
 
 class TestCreate < Test::Unit::TestCase
 	def test1_check_method
@@ -107,7 +109,7 @@ class TestCreate < Test::Unit::TestCase
 
   def test8_check_method_From_sql_file()
     puts '--------------------------Test 8------------------------'
-    transitions()
+    all_transitions_added()
     bufferTokens = Readio.new()
     tokens = bufferTokens.readthefile()
 
@@ -117,6 +119,22 @@ class TestCreate < Test::Unit::TestCase
         puts 'To handel last token (start from last invalid token)'
         $transitions.check(returnToken)
       end
+    end
+    add_relation_to_active_record_files($relations)
+    close_active_record_files($files_need_to_be_closed)
+  end
+
+  def add_relation_to_active_record_files(relations)
+    if relations != nil
+      relationship = ActiverecordRelationsFiles.new()
+      relationship.add_to_activerecord_classes(relations)
+    end
+  end
+
+  def close_active_record_files(files_need_to_be_closed)
+    if files_need_to_be_closed != nil
+      close = CloseActiveRecordFile.new()
+      close.all_active_record_files(files_need_to_be_closed)
     end
   end
 

@@ -36,6 +36,8 @@ require_relative 'table_indexes_stack'
 require_relative 'write_migration'
 require_relative 'write_activerecord'
 
+require_relative 'only_characters'
+
 class Node
 	attr_accessor :value, :left_node, :right_node, :data
 	
@@ -50,7 +52,9 @@ end
 class BinaryTree
 	attr_reader :root_node, :current_node, :column_definition, :temp_column_name, :temp_column_type,
               :temp_column_constrain, :temp_index_type, :temp_index_column_name, :temp_index_name,
-              :table_indexes, :table_name
+              :table_indexes, :table_name,
+              :temp_foreign_key_column_name, :temp_referenced_table, :temp_referenced_column,
+              :temp_foreign_key_delete_option, :temp_foreign_update_option
 
 	def initialize()#data = nil, value = nil)
 		#@root_node = Node.new(data,value)
@@ -67,6 +71,11 @@ class BinaryTree
     @temp_index_column_name = nil
     @temp_index_name = nil
 
+    @temp_foreign_key_column_name = nil
+    @temp_referenced_table = nil
+    @temp_referenced_column = nil
+    @temp_foreign_key_delete_option = nil
+    @temp_foreign_key_update_option = nil
 	end
 
 	def add(data,value)
@@ -232,8 +241,7 @@ class BinaryTree
   end
 
 	def initiate_class(valid_transition, token)
-		#@column_definition_loop = nil
-
+    name_only =  OnlyCharacters.new()
     case valid_transition
 			when "CREATE"
 				Create.new(valid_transition)
@@ -302,7 +310,7 @@ class BinaryTree
         validate_token = Key.new()
         result = validate_token.validate(token)
         if result == true and token != "KEY"
-          @temp_index_name = token
+          @temp_index_name = name_only.to_characters_only(token)
         end
         return result
 
@@ -310,9 +318,9 @@ class BinaryTree
         valid_transition = IndexNameOrIndexColumnName.new()
         result = valid_transition.validate(token)
         if result == "Go_To_KEY_Transition"
-          @temp_index_name = token
+          @temp_index_name = name_only.to_characters_only(token)
         elsif result == true
-          @temp_index_column_name = token
+          @temp_index_column_name = name_only.to_characters_only(token)
           push_to_table_indexes_stack()
         end
         return result
@@ -335,6 +343,9 @@ class BinaryTree
       when "FOREIGN_KEY_COLUMN_NAME"
         valid_transition = ForeignKeyColumnName.new()
         result = valid_transition.foreignKeyColumnNameCheck(token)
+        if result==true
+          @temp_foreign_key_column_name = name_only.to_characters_only(token)
+        end
         return result
 
       when "REFERENCES"
@@ -345,11 +356,17 @@ class BinaryTree
       when "FOREIGN_TABLE"
         valid_transition = ForeignTable.new()
         result = valid_transition.table_name(token)
+        if result==true
+          @temp_referenced_table = name_only.to_characters_only(token)
+        end
         return result
 
       when "FOREIGN_COLUMN"
         valid_transition = ForeignColumn.new()
         result = valid_transition.column_name(token)
+        if result == true
+          @temp_referenced_column = name_only.to_characters_only(token)
+        end
         return result
 
       when "ON"
@@ -368,17 +385,26 @@ class BinaryTree
       when "FOREIGN_KEY_OPTION1"
         valid_transition = ForeignKeyOption1.new()
         result = valid_transition.validate_option(token,$number_of_passes)
+        if $number_of_passes == 1
+        @temp_foreign_key_delete_option = valid_transition.get_option()
+        elsif $number_of_passes == 2
+          @temp_foreign_key_update_option = valid_transition.get_option()
+        end
         return result
 
       when "FOREIGN_KEY_OPTION2"
         puts $number_of_passes
         valid_transition = ForeignKeyOption2.new()
         result = valid_transition.validate_option(token,$number_of_passes)
+        if $number_of_passes == 1
+          @temp_foreign_key_delete_option = valid_transition.get_option(token)
+        elsif $number_of_passes == 2
+          @temp_foreign_key_update_option = valid_transition.get_option(token)
+        end
         return result
 
       when ");"
         Bracket.new(valid_transition)
-        #push_to_column_definition_stack()
         puts "============Write Column Definition================="
 
         my_info = @column_definition.get()
@@ -393,9 +419,8 @@ class BinaryTree
           end
         end
 
-        puts "============Write Table Indexes================="
-
         if @table_indexes != nil  #it should be empty maybe
+          puts "============Write Table Indexes================="
           my_info = @table_indexes.get()
           my_info.each_index do |i|
             puts "---- index # :#{i}"
@@ -407,17 +432,31 @@ class BinaryTree
 
         puts "============Write Table Name================="
         puts "Table name is : #{@table_name}"
+        puts
+
+        if temp_foreign_key_column_name != nil
+          puts "============Write constraint information Name============="
+          puts "The Current table name :#{@table_name}"
+          puts "The Foreign key column name is :#{@temp_foreign_key_column_name}"
+          puts "The Referenced table is : #{@temp_referenced_table}"
+          puts "The Referenced column is :#{@temp_referenced_column}"
+          puts "On delete option is :#{@temp_foreign_key_delete_option}"
+          puts "On update option is :#{@temp_foreign_key_update_option}"
+          puts
+          puts
+        end
+
 
         #write_class
         write_migration_file = Write_Migration.new()
-        write_migration_file.write_migration_script(@table_name, @column_definition)
+        write_migration_file.write_migration_script(@table_name, @column_definition, @table_indexes)
 
         write_activerecord_file = Write_ActiveRecord.new()
-        write_activerecord_file.write_active_record_script(@table_name)
+        write_activerecord_file.write_active_record_script(@table_name,@temp_foreign_key_column_name,
+                                                           @temp_referenced_table,@temp_referenced_column,
+                                                           @table_indexes)
 
-        @table_name = nil
-        @column_definition = Column_Stack.new()
-        @table_indexes = TableIndexesStack.new()
+        clear_current_collected_information()
         return true
 
 			when "DROP"
@@ -460,6 +499,22 @@ class BinaryTree
     @temp_index_type = nil
     @temp_index_column_name = nil
     @temp_index_name = nil
+  end
+
+  def clear_current_collected_information()
+    @table_name = nil
+
+    @column_definition = Column_Stack.new()
+
+    @table_indexes = TableIndexesStack.new()
+
+
+    @temp_foreign_key_column_name = nil
+    @temp_referenced_table = nil
+    @temp_referenced_column = nil
+    @temp_foreign_key_delete_option = nil
+    @temp_foreign_key_update_option = nil
+    $number_of_passes = 0
   end
 
 end

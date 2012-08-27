@@ -7,14 +7,21 @@ class Write_Migration
     end
   end
 
-  def write_migration_script(tableName, columns)
+  def write_migration_script(tableName, columns, tableIndexes)
     column_definition = columns
+    upper = UppercaseFirstLetter.new()
     file_name = tableName
+    primaryKey = nil
+    primaryKey = findPrimaryKey(tableIndexes)
     File.open("../create_#{file_name}.rb", 'w') do |f2|
-      f2.puts "class Create#{tableName} < ActiveRecord::Migration"
+      upper_tableName = upper.uppercase_first_letter(tableName)
+      f2.puts "class Create#{upper_tableName} < ActiveRecord::Migration"
       f2.puts "\tdef self.up"
-      f2.puts "\t\tcreate_table :#{tableName} do |t|"
-
+      if primaryKey != nil
+        f2.puts "\t\tcreate_table :#{tableName}, { :primary_key => :#{primaryKey} } do |t|"
+      elsif primaryKey == nil
+        f2.puts "\t\tcreate_table :#{tableName} do |t|"
+      end
       column_print = nil
       column_info = columns.get()
       column_info.each_index do |i|
@@ -52,4 +59,16 @@ class Write_Migration
     end
     #write_active_record_script(tableName)
   end
+
+  def findPrimaryKey(tableIndexes)
+    pk = nil
+    tableIndexes_info = tableIndexes.get()
+    tableIndexes_info.each_index do |i|
+      if tableIndexes_info[i].index_type == "PRIMARY"
+         pk = tableIndexes_info[i].index_column_name
+      end
+    end
+    return pk
+  end
+
 end

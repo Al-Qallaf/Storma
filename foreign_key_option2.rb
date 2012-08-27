@@ -1,8 +1,10 @@
 class ForeignKeyOption2
-  @@foreign_options = Hash["NULL" => "SET NULL", "ACTION" => "NO ACTION"]
+  @@foreign_options2 = Hash["NULL" => "SET NULL", "ACTION" => "NO ACTION"]
+  attr_reader :option_value
 
   def initialize()
     puts 'In ForeignKeyOption2 class'
+    @option_value = nil
   end
 
   def validate_option(token, number_of_passes)
@@ -30,5 +32,13 @@ class ForeignKeyOption2
     end
 
     return return_value
+  end
+
+  def get_option(token)
+    if @@foreign_options2.has_key?(token)
+      @option_value = @@foreign_options2[token]
+    end
+
+    return @option_value
   end
 end
