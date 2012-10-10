@@ -403,7 +403,7 @@ class BinaryTree
         end
         return result
 
-      when ");"
+      when ")"
         Bracket.new(valid_transition)
         puts "============Write Column Definition================="
 

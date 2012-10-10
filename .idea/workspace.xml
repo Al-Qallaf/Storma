@@ -2,27 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0eff470b-b972-47fe-8bc8-520d190d50a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/only_characters.rb" />
-      <change type="DELETED" beforePath="C:\Users\Ali\RubymineProjects\Storma\create_Salary.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Ali\RubymineProjects\Storma\create_customers.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Ali\RubymineProjects\Storma\create_orders.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Ali\RubymineProjects\Storma\customers.rb" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\Ali\RubymineProjects\Storma\orders.rb" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Ali\RubymineProjects\Storma\salary.rb" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Ali\RubymineProjects\Storma\simpledb.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bracket.rb" afterPath="$PROJECT_DIR$/bracket.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bt.rb" afterPath="$PROJECT_DIR$/bt.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/column_name.rb" afterPath="$PROJECT_DIR$/column_name.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foreign_key_option1.rb" afterPath="$PROJECT_DIR$/foreign_key_option1.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/foreign_key_option2.rb" afterPath="$PROJECT_DIR$/foreign_key_option2.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello.rb" afterPath="$PROJECT_DIR$/hello.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index_name_or_index_column_name.rb" afterPath="$PROJECT_DIR$/index_name_or_index_column_name.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index_type.rb" afterPath="$PROJECT_DIR$/index_type.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/close_activerecord_file.rb" afterPath="$PROJECT_DIR$/close_activerecord_file.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/default.sql" afterPath="$PROJECT_DIR$/default.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readio.rb" afterPath="$PROJECT_DIR$/readio.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unittest/test_bt.rb" afterPath="$PROJECT_DIR$/unittest/test_bt.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unittest/test_bt2.rb" afterPath="$PROJECT_DIR$/unittest/test_bt2.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unittest/test_column_name.rb" afterPath="$PROJECT_DIR$/unittest/test_column_name.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unittest/test_index_type.rb" afterPath="$PROJECT_DIR$/unittest/test_index_type.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unittest/test_write_activerecord.rb" afterPath="$PROJECT_DIR$/unittest/test_write_activerecord.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unittest/test_write_migration.rb" afterPath="$PROJECT_DIR$/unittest/test_write_migration.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/write_activerecord.rb" afterPath="$PROJECT_DIR$/write_activerecord.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/write_migration.rb" afterPath="$PROJECT_DIR$/write_migration.rb" />
     </list>
@@ -62,22 +54,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/unittest/test_activerecord_relations_files.rb" />
-        <option value="$PROJECT_DIR$/unittest/test_table_name_stack.rb" />
-        <option value="$PROJECT_DIR$/unittest/test_close_activerecord_file.rb" />
-        <option value="$PROJECT_DIR$/table_name_stack.rb" />
-        <option value="$PROJECT_DIR$/unittest/test_bt2.rb" />
-        <option value="$PROJECT_DIR$/unittest/test_only_characters.rb" />
-        <option value="$PROJECT_DIR$/bt.rb" />
-        <option value="$PROJECT_DIR$/activerecord_relations_files.rb" />
-        <option value="$PROJECT_DIR$/customers.rb" />
-        <option value="$PROJECT_DIR$/capital_first_letter.rb" />
-        <option value="$PROJECT_DIR$/unittest/test_capital_first_letter.rb" />
         <option value="$PROJECT_DIR$/unittest/test_uppercase_first_letter.rb" />
         <option value="$PROJECT_DIR$/uppercase_first_letter.rb" />
-        <option value="$PROJECT_DIR$/write_migration.rb" />
-        <option value="$PROJECT_DIR$/write_activerecord.rb" />
         <option value="$PROJECT_DIR$/orders.rb" />
+        <option value="$PROJECT_DIR$/default.sql" />
+        <option value="$PROJECT_DIR$/unittest/test_bt2.rb" />
+        <option value="$PROJECT_DIR$/bracket.rb" />
+        <option value="$PROJECT_DIR$/bt.rb" />
+        <option value="$PROJECT_DIR$/unittest/test_storma.rb" />
+        <option value="$PROJECT_DIR$/readio.rb" />
+        <option value="$PROJECT_DIR$/helloworld.rb" />
+        <option value="$PROJECT_DIR$/unittest/test_bt.rb" />
+        <option value="$PROJECT_DIR$/storma.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/2_create_orders.rb" />
+        <option value="$PROJECT_DIR$/write_activerecord.rb" />
+        <option value="$PROJECT_DIR$/write_migration.rb" />
+        <option value="$PROJECT_DIR$/close_activerecord_file.rb" />
       </list>
     </option>
   </component>
@@ -132,7 +124,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -153,6 +144,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -168,6 +160,7 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="207" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="846" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="826" />
@@ -192,7 +185,7 @@
       <recent name="C:\Users\Ali\RubymineProjects\ReadSQLfileV5\unittest" />
     </key>
   </component>
-  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.test8_check_method_From_sql_file">
+  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.test_bt">
     <configuration default="false" name="test8_check_method_From_sql_file" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
       <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
       <module name="ReadSQLfileV5" />
@@ -221,78 +214,6 @@
       <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="test_close_activerecord_file" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
-      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
-      <module name="ReadSQLfileV5" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/unittest" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/unittest/test_close_activerecord_file.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="test_table_name_stack" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
-      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
-      <module name="ReadSQLfileV5" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/unittest" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/unittest/test_table_name_stack.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="test_only_characters" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
-      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
-      <module name="ReadSQLfileV5" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/unittest" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/unittest/test_only_characters.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="test_uppercase_first_letter" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
       <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
       <module name="ReadSQLfileV5" />
@@ -307,7 +228,73 @@
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="C:\Users\Ali\RubymineProjects\Storma\unittest\test_uppercase_first_letter.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/unittest/test_uppercase_first_letter.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_storma" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="ReadSQLfileV5" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/unittest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/unittest/test_storma.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="storma" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="ReadSQLfileV5" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/storma.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_bt" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="ReadSQLfileV5" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$/unittest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/unittest/test_bt.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
@@ -377,18 +364,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test8_check_method_From_sql_file" />
-      <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_close_activerecord_file" />
-      <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_table_name_stack" />
-      <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_only_characters" />
-      <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_uppercase_first_letter" />
+      <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_uppercase_first_letter" />
+      <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_storma" />
+      <item index="3" class="java.lang.String" itemvalue="Ruby.storma" />
+      <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_bt" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test8_check_method_From_sql_file" />
-        <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_uppercase_first_letter" />
-        <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_only_characters" />
-        <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_close_activerecord_file" />
-        <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_table_name_stack" />
+        <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_bt" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.storma" />
+        <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_storma" />
+        <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test8_check_method_From_sql_file" />
+        <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_uppercase_first_letter" />
       </list>
     </recent_temporary>
   </component>
@@ -440,23 +427,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.67027026" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16786227" sideWeight="0.32702702" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19655667" sideWeight="0.7391892" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20731707" sideWeight="0.7391892" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26081082" sideWeight="0.49713057" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16786227" sideWeight="0.33378378" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32702702" sideWeight="0.4978479" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.29594594" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" x="854" y="206" width="704" height="437" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.29594594" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" x="489" y="333" width="873" height="437" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837838" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -515,105 +502,77 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/unittest/test_only_characters.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="338" selection-end="338" vertical-scroll-proportion="0.43678162">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/column_name.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="11" selection-start="525" selection-end="561" vertical-scroll-proportion="0.45402297">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bt.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="390" column="49" selection-start="12007" selection-end="12007" vertical-scroll-proportion="0.9253438">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/only_characters.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="11" selection-start="6" selection-end="20" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/table_name_stack.rb">
+    <entry file="file://$PROJECT_DIR$/column_stack.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activerecord_relations_files.rb">
+    <entry file="file://$PROJECT_DIR$/unittest/test_table_indexes_stack.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="402" selection-end="402" vertical-scroll-proportion="0.5095785">
+        <state line="11" column="30" selection-start="273" selection-end="273" vertical-scroll-proportion="0.28531468">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/table_indexes_stack.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="599" selection-end="599" vertical-scroll-proportion="0.44195804">
+        <state line="11" column="6" selection-start="274" selection-end="274" vertical-scroll-proportion="0.026573427">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unittest/test_uppercase_first_letter.rb">
+    <entry file="file://$PROJECT_DIR$/bt.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="32" selection-start="98" selection-end="98" vertical-scroll-proportion="0.07972028">
-          <folding />
+        <state line="128" column="20" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.2923077">
+          <folding>
+            <element signature="e#3803#6009#0" expanded="false" />
+            <element signature="e#6013#7395#0" expanded="false" />
+            <element signature="e#7398#15128#0" expanded="false" />
+            <element signature="e#15131#15370#0" expanded="false" />
+            <element signature="e#15374#15587#0" expanded="false" />
+            <element signature="e#15591#15970#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uppercase_first_letter.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="21" selection-start="98" selection-end="98" vertical-scroll-proportion="0.10629371">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_orders.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/create_customers.rb">
+    <entry file="file://$PROJECT_DIR$/unittest/test_storma.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unittest/test_write_migration.rb">
+    <entry file="file://$PROJECT_DIR$/unittest/test_bt2.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="227" column="35" selection-start="7721" selection-end="8059" vertical-scroll-proportion="0.6210826">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/write_migration.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="351" selection-end="351" vertical-scroll-proportion="0.37202796">
+        <state line="13" column="76" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/customers.rb">
+    <entry file="file://$PROJECT_DIR$/database.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="168" selection-end="168" vertical-scroll-proportion="0.21258742">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/orders.rb">
+    <entry file="file://$PROJECT_DIR$/unittest/test_column_name.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="14" selection-start="34" selection-end="34" vertical-scroll-proportion="0.026573427">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unittest/test_column.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -622,7 +581,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/write_activerecord.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="26" selection-start="656" selection-end="656" vertical-scroll-proportion="0.3986014">
+        <state line="25" column="14" selection-start="899" selection-end="899" vertical-scroll-proportion="0.66433567">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6039886">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/close_activerecord_file.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="24" selection-start="134" selection-end="134" vertical-scroll-proportion="0.15944056">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Ruby/Storma">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Ruby</ID>
+          <OriginalElement>Storma</OriginalElement>
+          <nodes>
+            <node x="" y="">Write_ActiveRecord</node>
+            <node x="" y="">CloseActiveRecordFile</node>
+            <node x="" y="">BinaryTree</node>
+            <node x="" y="">Storma</node>
+            <node x="" y="">Write_Migration</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="302.5" y="250.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Methods</Category>
+            <Category>Constants</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storma.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="54" selection-start="528" selection-end="528" vertical-scroll-proportion="0.07972028">
           <folding />
         </state>
       </provider>

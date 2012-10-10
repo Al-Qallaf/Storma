@@ -9,7 +9,7 @@ class Bracket
 		case token
 			when "("
 				puts 'Open bracket'
-			when ");"
+			when ")"
 				puts 'Close bracket'
 			else
 				puts 'Error 4, no open/close Bracket'

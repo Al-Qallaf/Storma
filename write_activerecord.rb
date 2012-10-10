@@ -14,7 +14,7 @@ class Write_ActiveRecord
     primaryKey = findPrimaryKey(tableIndexes)
 
     file_name = tableName.downcase
-    File.open("../#{file_name}.rb", 'w') do |f2|
+    File.open("dbfiles/migrate/#{file_name}.rb", 'w') do |f2|
       f2.puts "require 'rubygems'"
       f2.puts "require 'active_record'"
       f2.puts "\n"

@@ -195,12 +195,12 @@ class TestCreate < Test::Unit::TestCase
     $transitions.add("COLUMN_NAME",84)
     $transitions.add("COLUMN_TYPE",85)
     $transitions.add("COLUMN_CONSTRAINTS",88)
-    $transitions.add(");",86)
+    $transitions.add(")",86)
 
     $transitions.add("INDEX_TYPE",90)
     $transitions.add("KEY",91)
     $transitions.add("INDEX_NAME_OR_INDEX_COLUMN_NAME",93)
-    $transitions.add(");",92)
+    $transitions.add(")",92)
 
     $transitions.add("CONSTRAINT",94)
     $transitions.add("CONSTRAINT_NAME",95)
@@ -213,9 +213,9 @@ class TestCreate < Test::Unit::TestCase
     $transitions.add("ON",102)
     $transitions.add("DELETE_UPDATE",103)
     $transitions.add("FOREIGN_KEY_OPTION1",105)
-    $transitions.add(");",104)
+    $transitions.add(")",104)
     $transitions.add("FOREIGN_KEY_OPTION2",106)
-    $transitions.add(");",107)
+    $transitions.add(")",107)
 
 
 

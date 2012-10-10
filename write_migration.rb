@@ -1,4 +1,6 @@
 class Write_Migration
+  $serial = 0
+
   def read_file()
     File.open('../read.rb', 'r') do |f1|
       while line = f1.gets
@@ -12,8 +14,9 @@ class Write_Migration
     upper = UppercaseFirstLetter.new()
     file_name = tableName
     primaryKey = nil
+    $serial = $serial + 1
     primaryKey = findPrimaryKey(tableIndexes)
-    File.open("../create_#{file_name}.rb", 'w') do |f2|
+    File.open("dbfiles/migrate/#{$serial}_create_#{file_name}.rb", 'w') do |f2|
       upper_tableName = upper.uppercase_first_letter(tableName)
       f2.puts "class Create#{upper_tableName} < ActiveRecord::Migration"
       f2.puts "\tdef self.up"

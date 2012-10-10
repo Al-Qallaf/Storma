@@ -1,0 +1,9 @@
+D, [2012-09-10T00:58:35.991803 #7264] DEBUG -- :   [1m[36m (102.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+D, [2012-09-10T00:58:36.141812 #7264] DEBUG -- :   [1m[35m (147.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+D, [2012-09-10T00:58:36.167813 #7264] DEBUG -- :   [1m[36m (12.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+I, [2012-09-10T00:58:36.167813 #7264]  INFO -- : Migrating to CreateCustomers (1)
+D, [2012-09-10T00:58:36.291820 #7264] DEBUG -- :   [1m[35m (119.0ms)[0m  CREATE TABLE `customers` (`idcustomers` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `phone` int(11)) ENGINE=InnoDB
+D, [2012-09-10T00:58:36.332823 #7264] DEBUG -- :   [1m[36m (38.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('1')[0m
+I, [2012-09-10T00:58:36.333823 #7264]  INFO -- : Migrating to CreateOrders (2)
+D, [2012-09-10T00:58:36.416828 #7264] DEBUG -- :   [1m[35m (75.0ms)[0m  CREATE TABLE `orders` (`idorders` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `order_date` date, `order_number` varchar(255), `customerid` int(11)) ENGINE=InnoDB
+D, [2012-09-10T00:58:36.458830 #7264] DEBUG -- :   [1m[36m (38.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('2')[0m

@@ -8,7 +8,7 @@ class CloseActiveRecordFile
     classes.each_index do |i|
       #open file which is in referencedTable
       #add has_many: #{tableName]
-      File.open("../#{classes[i].tableName}.rb", 'a') do |f2|
+      File.open("dbfiles/migrate/#{classes[i].tableName}.rb", 'a') do |f2|
         f2.puts "end"
       end
     end

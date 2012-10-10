@@ -30,7 +30,7 @@ CREATE TABLE `customers` (
   `email` varchar(45) DEFAULT NULL,
   `phone` int(11) DEFAULT NULL,
   PRIMARY KEY (`idcustomers`)
-); ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`idorders`),
   KEY `F_K_IN_ord_to_cus` (`customerid`),
   CONSTRAINT `F_K_IN_ord_to_cus` FOREIGN KEY (`customerid`) REFERENCES `customers` (`idcustomers`) ON DELETE CASCADE ON UPDATE NO ACTION
-); ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
